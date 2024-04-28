@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <title>Companies Profit Prediction</title>
+   </head>
+   <body>
+      <div class="container">
+         <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/static/img/pngtree-accounting-logo-image_80363.jpg" alt="">
+            <h2>Company Profit Prediction</h2>
+            <p class="lead">Below is an example form built to predict the Company Profits</p>
+         </div>
+         <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+               <h4 class="mb-3">Companies Expenses Details</h4>
+               {% if show_hidden == True %}
+               <div class="alert alert-success" role="alert">{{ prediction_text }}</div>
+               {% endif %}
+               <form action="{{ url_for('predict')}}"method="post" class="needs-validation" >
+                  <div class="row">
+                     <div class="col-md-6 mb-3">
+    <label for="current_assets">Current Assets</label>
+    <input type="text" class="form-control" id="current_assets" name="Current assets" placeholder="" value="" required>
+</div>
+                  <div class="col-md-6 mb-3">
+                      <label for="cost_of_goods_sold">Cost of Goods Sold</label>
+                      <input type="text" class="form-control" id="cost_of_goods_sold" name="Cost of goods sold"  placeholder="" value="" required>
+                  </div>
+                  </div>
+                  <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label for="depreciation_amortization">Depreciation and Amortization</label>
+                      <input type="text" class="form-control" id="depreciation_amortization" name="Depreciation and amortization" placeholder="" value="" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                     <label for="inventory">Inventory</label>
+                     <input type="text" class="form-control" id="inventory" name="Inventory" placeholder="" value="" required>
+                 </div>
+                 <div class="col-md-6 mb-3">
+                  <label for="total_receivables">Total Receivables</label>
+                  <input type="text" class="form-control" id="total_receivables" name="Total Receivables" placeholder="" value="" required>
+              </div>
+              <div class="col-md-6 mb-3">
+               <label for="total_assets">Total Assets</label>
+               <input type="text" class="form-control" id="total_assets" name="Total assets" placeholder="" value="" required>
+           </div>
+           <div class="col-md-6 mb-3">
+            <label for="total_long_term_debt">Total Long-term Debt</label>
+            <input type="text" class="form-control" id="total_long_term_debt" name="Total Long-term debt" placeholder="" value="" required>
+        </div>
+        <div class="col-md-6 mb-3">
+         <label for="total_operating_expenses">Total Operating Expenses</label>
+         <input type="text" class="form-control" id="total_operating_expenses" name="Total Operating Expenses" placeholder="" value="" required>
+     </div>
+               </div>
+         
+
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Predict</button>
+            </div>
+            <div class="col-md-2">
+            </div>
+            </form>
+         </div>
+         <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; April-2024 AYUSHMAN SAINI</p>
+            
+         </footer>
+      </div>
+       </body>
+</html>
